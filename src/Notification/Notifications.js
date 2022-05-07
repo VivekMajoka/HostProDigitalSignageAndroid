@@ -16,20 +16,22 @@ import {Themecontext} from '../Theme/Themecontext';
 import {FontContext} from '../FontSize/FontContext';
 // import { styles } from '../Logintv.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from '@react-navigation/native';
 
 const Notifications = ({navigation}) => {
   const theme = useContext(Themecontext);
   const fontsize = useContext(FontContext);
+  const isFocused = useIsFocused();
 
   // const data = [{channel_number: 1}, {channel_number: 2}, {channel_number: 3}];
   const [data, setdata] = useState([]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [isFocused]);
 
   const getData = async () => {
-    const id = '1';
+    const id = '31';
     const requestOptions = {
       method: 'GET',
       headers: {
@@ -53,7 +55,7 @@ const Notifications = ({navigation}) => {
             return (
               <TouchableOpacity
                 activeOpacity={0.6}
-                onPress={()=> {navigation.navigate('NotificationView',{id : item.id})}}
+                onPress={()=> {navigation.navigate('NotificationView',{id : item.id, update_id: item.notification.id})}}
                 key={item.id}
                 style={{
                   flexDirection: 'row',
@@ -128,7 +130,7 @@ const Notifications = ({navigation}) => {
                         // borderColor: 'black',
                         // borderWidth: 1,
                       }}>
-                      <Text style={{color: 'white'}}>
+                      <Text style={[{color: 'white'}, {fontSize: fontsize.fontSize}]}>
                         {item.notification.title}
                       </Text>
                     </View>
@@ -140,7 +142,7 @@ const Notifications = ({navigation}) => {
                         // borderColor: 'black',
                         // borderWidth: 1,
                       }}>
-                      <Text style={{color: 'white'}}>
+                      <Text style={[{color: 'white'}, {fontSize: fontsize.fontSize}]}>
                         {item.notification.text_content}
                       </Text>
                     </View>

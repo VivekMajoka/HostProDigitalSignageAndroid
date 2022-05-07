@@ -58,7 +58,7 @@ class Loginpassword extends Component {
                 password: this.state.password
             })
 
-            // alert(JSON.stringify(res.data))
+            alert(JSON.stringify(res.data))
             if (res.data.token) {
                 try {
                     // console.log(res.data.token,"fgh")
