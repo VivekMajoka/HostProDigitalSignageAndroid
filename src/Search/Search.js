@@ -24,7 +24,7 @@ const ChangePassword = ({navigation}) => {
   // const [theme, settheme] = useState(true);
   // alert(globalTheme)
   useEffect(() => {
-    getData();
+    // getData();
     return () => {};
   }, []);
 
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     margin: 10,
     height: 50,
     borderRadius: 10,
-    // borderColor:'grey',
-    // borderWidth:1
+    borderColor:'grey',
+    borderWidth:1
     // padding: 5,
   },
 

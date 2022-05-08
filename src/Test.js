@@ -8,64 +8,92 @@ import {
   Dimensions,
   TextInput,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
+import {styles} from './Logintv.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import logo from './assests/logo.png';
+import Toast from 'react-native-simple-toast';
+import axios from 'axios';
+import {Themecontext} from './Theme/Themecontext';
 
 export default Test = ({navigation}) => {
-  const [pass, setpass] = useState('')
-  const checkData = () => {
-    // alert(pass)
-  }
-
-  useEffect(() => {
-    getData();
-  }, [])
-  
-  // const getData = async() => {
-  //   const token = await AsyncStorage.getItem('token')
-  //   const id = 1
-  //   // alert(token)
-  //   const requestOptions = {
-  //     method : 'GET',
-  //     header : {
-  //       'Content-Type': 'application/json',
-  //       Accept: 'application/json',
-  //       // Authorization : 'Token '+token,
-  //     },
-  //   }
-    
-  //   fetch(`http://196.29.238.100:8002/notifi/1`, requestOptions)
-  //   .then(res => res.json)
-  //   .then(res => {
-  //     alert(JSON.stringify(res))
-  //   })
-  // }
-  const getData = async () => {
-    // AsyncStorage get data
-    // const token = await AsyncStorage.getItem('token');
-    const requestOptions = {
-      method: 'GET',
-      headers: {
-        // 'content-type': 'application/json',
-        // Accept: 'application/json',
-        Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0ODUsInVzZXJuYW1lIjoiYWJjZEAyIiwiZXhwIjoxNjUxODIwMDY1LCJlbWFpbCI6ImFiY2QxQGdtLmNvbSJ9.yvpVPfrJhytDsXie4b3Xvh78uqvjUvEM2uh5G6aD6j0',
-      },
-    };
-    await fetch(`http://18.216.87.97/bnb/hotel/detail/`, requestOptions)
-      .then(res => res.json())
-      .then(res => {
-        if (res) {
-          // setdata(res);
-          alert(res)
+  const [email, setemail] = useState('');
+  const [pass, setpass] = useState('');
+  const theme = useContext(Themecontext);
+  const postData = async () => {
+    if (!email && !pass) {
+      Toast.show('Please enter email/password', Toast.LONG);
+    } else {
+      fetch ('http://196.29.238.100:8002/auth/login/', {
+        method : 'POST',
+        headers:{
+          'content-type' : 'application/json'
+        },
+        body: JSON.stringify({username: email,
+          password: pass,})
+        
+      })
+      .then(res=>res.json())
+      .then(async(res)=>{
+        // alert(JSON.stringify(res.token))
+        if (res.token) {
+          try {
+            // console.log(res.data.token,"fgh")
+            Toast.show('Login Successful!', Toast.LONG);
+            await AsyncStorage.setItem('token', res.token);
+            // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
+            // let token=await AsyncStorage.getItem('id')
+            // alert(token)
+            return navigation.navigate('Layoutscreen');
+          } catch (e) {
+            // saving error
+            console.log(e);
+          }
+        } else {
+          Toast.show('Invalid Credentials!', Toast.LONG);
+          console.log(res.errors);
         }
       })
-      .catch(error => alert(error));
+      .catch(error=>alert(error))
+    }
   };
 
-  return(
-    <View>
-      <TextInput style={{borderWidth:1, borderColor:'black'}} onChangeText={(text) => {setpass(text)}}/>
-      <TouchableOpacity style={{padding: 20, backgroundColor:'red'}} onPress={getData}><Text>SUBMIT</Text></TouchableOpacity>
+  return (
+    <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+      <View
+        style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+        <Image source={logo} style={styles.logo} />
+      </View>
+      <KeyboardAvoidingView style={styles.formContainer}>
+        <TextInput
+          autoFocus={true}
+          placeholder="Email/Username"
+          placeholderTextColor="rgba(33,33,33,0.9)"
+          style={styles.textInput}
+          autoCapitalize="none"
+          onChangeText={val => setemail(val)}
+          hasTvPrefferedFocus={true}
+        />
+        <TextInput
+          // hasTvPrefferedFocus={true}
+          textContentType="password"
+          autoFocus={true}
+          secureTextEntry={true}
+          password={true}
+          placeholder="Password"
+          placeholderTextColor="rgba(33,33,33,0.9)"
+          style={styles.textInput}
+          autoCapitalize="none"
+          onChangeText={val => setpass(val)}
+        />
+
+        <TouchableOpacity
+          style={styles.textInputBtn}
+          onPress={postData}>
+          <Text style={styles.btnText}>LOGIN</Text>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     </View>
-  )
-}
+  );
+};

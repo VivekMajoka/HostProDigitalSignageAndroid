@@ -68,6 +68,20 @@ const App = () => {
     <Themecontext.Provider value={mode == 'true' ? Theme.dark : Theme.light}>
       <NavigationContainer theme={ mode == 'true' ? DarkTheme : DefaultTheme } >
         <Stack.Navigator>
+        {/* <Stack.Screen
+            name="Test"
+            component={Test}
+            options={{
+              title: 'Test',
+              headerShown: true,
+              headerStyle: {backgroundColor: theme.backgroundColor},
+              headerTintColor: theme.color,
+              headerTitleStyle: {
+                fontFamily: 'AdobeClean-Bold',
+                fontSize: 22,
+              },
+            }}
+          /> */}
           <Stack.Screen
             name="Login"
             component={Login}
@@ -208,6 +222,7 @@ const App = () => {
               },
             }}
           />
+          
           {/*  <Stack.Screen name="Settings" component={Settings} /> */}
         </Stack.Navigator>
       </NavigationContainer>
