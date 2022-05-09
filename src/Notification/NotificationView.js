@@ -60,7 +60,7 @@ const NotificationView = ({navigation, route}) => {
   const putData = async () => {
     // const id = '1';
     const formData = new FormData();
-    formData.append('notification', 31);
+    formData.append('notification', update_id);
     formData.append('read_status', 'True');
     const requestOptions = {
       method: 'PUT',
@@ -189,21 +189,21 @@ const NotificationView = ({navigation, route}) => {
         <TouchableOpacity
           activeOpacity={0.6}
           onPress={putData}
-          style={{
+          style={[{
             width: '40%',
             backgroundColor: '#17baa1',
             height: '30%',
             justifyContent: 'center',
             borderRadius: 40,
             alignItems: 'center',
-          }}>
+          }]}>
           <Text
-            style={{
-              fontSize: 15,
+            style={[{
+              // fontSize: 15,
               fontWeight: '600',
               color: 'white',
               letterSpacing: 1.15,
-            }}>
+            }, {fontSize:fontsize.fontSize}]}>
             Mark as read!
           </Text>
         </TouchableOpacity>

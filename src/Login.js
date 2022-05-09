@@ -52,6 +52,7 @@ class Login extends Component {
       this.props.navigation.navigate('Loginpassword', {
         email: this.state.email,
       });
+      this.setState({email: ''});
     }
   };
 
@@ -80,6 +81,7 @@ class Login extends Component {
         <KeyboardAvoidingView style={[styles.formContainer]}>
           <TextInput
             autoFocus={true}
+            value={this.state.email}
             placeholder="Email/Username"
             placeholderTextColor="rgba(33,33,33,0.9)"
             style={[styles.textInput, {fontSize: fontsize.fontSize}]}

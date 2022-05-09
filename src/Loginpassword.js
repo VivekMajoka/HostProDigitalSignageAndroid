@@ -43,34 +43,35 @@ class Loginpassword extends Component {
   };
   onPressLogin = async () => {
     // console.log(this.state.password, this.state.email)
-    // if (!this.state.password) {
-    alert('please enter password');
-    //     Toast.show("Please enter password", Toast.LONG);
-    // } else {
-    let res = await axios.post('http://196.29.238.100/auth/login/', {
-      username: this.state.email,
-      password: this.state.password,
-    });
-
-    alert(JSON.stringify(res.data));
-    if (res.data.token) {
-      try {
-        // console.log(res.data.token,"fgh")
-        Toast.show('Login Successful!', Toast.LONG);
-        await AsyncStorage.setItem('token', res.data.token);
-        // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
-        // let token=await AsyncStorage.getItem('id')
-        // alert(token)
-        return this.props.navigation.navigate('Layoutscreen');
-      } catch (e) {
-        // saving error
-        console.log(e);
-      }
+    if (!this.state.password) {
+      alert('please enter password');
+      Toast.show('Please enter password', Toast.LONG);
     } else {
-      Toast.show('Invalid Credentials!', Toast.LONG);
-      console.log(res.errors);
+      let res = await axios.post('http://196.29.238.100:8002/auth/login/', {
+        username: this.state.email,
+        password: this.state.password,
+      });
+
+      // alert(JSON.stringify(res.data));
+      if (res.data.token) {
+        try {
+          // console.log(res.data.token,"fgh")
+          Toast.show('Login Successful!', Toast.LONG);
+          await AsyncStorage.setItem('token', res.data.token);
+          await AsyncStorage.setItem('id', JSON.stringify(res.data.id));
+          // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
+          let token=await AsyncStorage.getItem('id')
+          // alert(token)
+          return this.props.navigation.navigate('Layoutscreen');
+        } catch (e) {
+          // saving error
+          console.log(e);
+        }
+      } else {
+        Toast.show('Invalid Credentials!', Toast.LONG);
+        console.log(res.errors);
+      }
     }
-    // }
   };
 
   render() {

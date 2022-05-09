@@ -82,6 +82,7 @@ const App = () => {
               },
             }}
           /> */}
+          
           <Stack.Screen
             name="Login"
             component={Login}
@@ -96,6 +97,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Loginpassword"
             component={Loginpassword}
@@ -110,6 +112,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Layoutscreen"
             component={DrawerNavigation}
@@ -124,6 +127,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Settings"
             component={Settings}
@@ -138,6 +142,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Notifications"
             component={Notifications}
@@ -152,6 +157,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="NotificationView"
             component={NotificationView}
@@ -166,6 +172,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="ChangePassword"
             component={ChangePassword}
@@ -180,6 +187,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Search"
             component={Search}
@@ -194,6 +202,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="ContactUs"
             component={ContactUs}
@@ -208,6 +217,7 @@ const App = () => {
               },
             }}
           />
+
           <Stack.Screen
             name="Test"
             component={Test}

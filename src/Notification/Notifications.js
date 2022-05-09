@@ -31,7 +31,8 @@ const Notifications = ({navigation}) => {
   }, [isFocused]);
 
   const getData = async () => {
-    const id = '31';
+    // const id = '31';
+    const id = await AsyncStorage.getItem('id');
     const requestOptions = {
       method: 'GET',
       headers: {

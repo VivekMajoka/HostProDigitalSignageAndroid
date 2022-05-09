@@ -18,6 +18,7 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Themecontext} from '../Theme/Themecontext';
 import {FontContext} from '../FontSize/FontContext';
@@ -107,7 +108,7 @@ function CustomDrawer(props) {
             <DrawerItem
               icon={({color, size}) => (
                 <FontAwesome
-                  name="cog"
+                  name="bell"
                   size={size}
                   color={theme.color}
                   style={{width: 30}}
@@ -143,7 +144,7 @@ function CustomDrawer(props) {
                 props.navigation.navigate('ContactUs');
               }}
             />
-            <DrawerItem
+            {/* <DrawerItem
               icon={({color, size}) => (
                 <FontAwesome
                   name="phone"
@@ -161,7 +162,7 @@ function CustomDrawer(props) {
               onPress={() => {
                 props.navigation.navigate('Test');
               }}
-            />
+            /> */}
 
             {/* <DrawerItem
               icon={({color, size}) => (
@@ -189,7 +190,13 @@ function CustomDrawer(props) {
         ]}>
         <DrawerItem
           icon={({color, size}) => (
-            <Icon name="exit-to-app" color={theme.color} size={size} />
+            <MaterialIcons
+            name="logout"
+            size={size}
+            color={theme.color}
+            style={{width: 28}}
+          />
+          
           )}
           label="Sign Out"
           labelStyle={[
