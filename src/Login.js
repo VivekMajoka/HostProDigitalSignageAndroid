@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
   Appearance,
+  StatusBar,
 } from 'react-native';
 import {styles} from './Logintv.style';
 import logo from './assests/logo.png';
@@ -63,6 +64,7 @@ class Login extends Component {
     return (
       <View
         style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+        <StatusBar backgroundColor={theme.backgroundColor} />
         <View
           style={{
             height: '50%',

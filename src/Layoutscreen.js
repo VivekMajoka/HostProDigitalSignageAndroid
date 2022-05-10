@@ -2,15 +2,25 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {Component} from 'react';
 import {styles} from './Logintv.style';
 import logo from './assests/logo.png';
-import {ImageBackground, View, Text, Image, Dimensions} from 'react-native';
+import {
+  ImageBackground,
+  View,
+  Text,
+  Image,
+  Dimensions,
+  StatusBar,
+} from 'react-native';
 import Video from 'react-native-video';
-import { Themecontext } from "./Theme/Themecontext";
+import {Themecontext} from './Theme/Themecontext';
+import {FontContext} from './FontSize/FontContext';
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 class Layoutscreen extends Component {
-  static contextType = Themecontext
+  static contextType = Themecontext;
+  static fontType = FontContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -29,10 +39,9 @@ class Layoutscreen extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: 'Token '+token,
+        Authorization: 'Token ' + token,
       },
     })
-    
       .then(response => response.json())
       .then(res => {
         // console.log(res[0].templates, 'template');
@@ -113,12 +122,15 @@ class Layoutscreen extends Component {
 
   render() {
     const theme = this.context;
+    const fontsize = this.context;
     return (
-      <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+      <View
+        style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+        <StatusBar backgroundColor={theme.backgroundColor} />
         {this.state.types == 'splash' ? (
           <View style={styles.logoContainer}>
             <Image source={logo} style={styles.logo} />
-            <Text style={styles.btnText}>Campaigns are loading...</Text>
+            <Text style={[{color:theme.color},{fontSize:fontsize.fontSize}]}>Campaigns are loading...</Text>
           </View>
         ) : this.state.types == 1 ? (
           <ImageBackground

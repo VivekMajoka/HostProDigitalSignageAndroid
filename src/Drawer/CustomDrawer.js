@@ -68,7 +68,7 @@ function CustomDrawer(props) {
               onPress={() => props.navigation.navigate('Home')}
             /> */}
 
-            <DrawerItem
+            {/* <DrawerItem
               icon={({color, size}) => (
                 <FontAwesome
                   name="search"
@@ -84,7 +84,7 @@ function CustomDrawer(props) {
                 {color: theme.color, fontSize: fscontext.fontSize},
               ]}
               onPress={() => props.navigation.navigate('Search')}
-            />
+            /> */}
 
             <DrawerItem
               icon={({color, size}) => (

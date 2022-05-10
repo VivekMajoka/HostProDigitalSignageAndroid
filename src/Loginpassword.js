@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   Dimensions,
+  StatusBar
 } from 'react-native';
 import {styles} from './Logintv.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -60,9 +61,10 @@ class Loginpassword extends Component {
           await AsyncStorage.setItem('token', res.data.token);
           await AsyncStorage.setItem('id', JSON.stringify(res.data.id));
           // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
-          let token=await AsyncStorage.getItem('id')
+          let token = await AsyncStorage.getItem('id');
           // alert(token)
           return this.props.navigation.navigate('Layoutscreen');
+          // this.setState({password: ''})
         } catch (e) {
           // saving error
           console.log(e);
@@ -79,6 +81,7 @@ class Loginpassword extends Component {
     return (
       <View
         style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+        <StatusBar backgroundColor={theme.backgroundColor} />
         <View
           style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
           <Image source={logo} style={styles.logo} />

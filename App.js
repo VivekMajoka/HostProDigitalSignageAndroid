@@ -27,6 +27,7 @@ import fontSize from './src/FontSize/FontSize';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Notifications from './src/Notification/Notifications'
 import NotificationView from './src/Notification/NotificationView';
+import Splashscreen from './src/Splashscreen/Splashscreen';
 import Test from './src/Test';
 
 const Stack = createNativeStackNavigator();
@@ -69,11 +70,11 @@ const App = () => {
       <NavigationContainer theme={ mode == 'true' ? DarkTheme : DefaultTheme } >
         <Stack.Navigator>
         {/* <Stack.Screen
-            name="Test"
-            component={Test}
+            name="Splashscreen"
+            component={Splashscreen}
             options={{
               title: 'Test',
-              headerShown: true,
+              headerShown: false,
               headerStyle: {backgroundColor: theme.backgroundColor},
               headerTintColor: theme.color,
               headerTitleStyle: {

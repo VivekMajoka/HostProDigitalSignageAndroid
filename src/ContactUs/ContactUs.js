@@ -21,27 +21,28 @@ const ChangePassword = ({navigation}) => {
 
   return (
     <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
-      <View style={styles.tile}>
-        <TextInput
-          style={styles.textInput}
-          placeholder={'Contact Number'}
-          blurOnSubmit={true}></TextInput>
+      <View style={[styles.messageTile, {backgroundColor: theme.backgroundColor}]}>
+        <Text style={[styles.heading, {color:theme.color}]}>LEANVIA Europe </Text>
+        <Text style={[styles.subHeading, {color:theme.color}]}>LEANVIA s.r.o. </Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Sturova 50, 07801 Secovce</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Slovak Republic</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Phone: +421 949 700 450</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Email: info@leanvia.com</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Skype: leanvia.com</Text>
       </View>
-      <View style={styles.tile}>
-        <TextInput
-          style={styles.textInput}
-          placeholder={'Email'}></TextInput>
+      <View style={[styles.messageTile, {backgroundColor: theme.backgroundColor}]}>
+        <Text style={[styles.heading, {color:theme.color}]}>LEANVIA Asia</Text>
+        <Text style={[styles.subHeading, {color:theme.color}]}>M/S. LEANVIA</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>776, IA-2</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Chandigarh 160002</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>India</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Phone:  +91 172 404 4311</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Email: info@leanvia.com</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Skype: leanvia.com</Text>
       </View>
-      <View style={styles.messageTile}>
-        <TextInput
-        multiline={true}
-          style={[styles.messageTextInput] }
-          numberOfLines={4}
-          placeholder={'Message'}></TextInput>
-      </View>
-      <TouchableOpacity style={styles.button}>
+      {/* <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>SUBMIT</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 10,
     padding: 5,
-    marginBottom:10,
+    marginBottom: 10,
     borderColor: 'black',
     borderWidth: 1,
   },
@@ -72,26 +73,49 @@ const styles = StyleSheet.create({
     fontSize: 14,
     // fontFamily: 'normal',
     fontWeight: '600',
+    letterSpacing: 1.15,
   },
 
-  textInput: {
-    height: 45,
+  heading: {
     width: '100%',
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderRadius: 5,
+    fontWeight: '700',
+    fontSize: 28,
+    letterSpacing: 1.15,
+  },
+
+  subHeading: {
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    fontWeight: '600',
+    fontSize: 18,
+    letterSpacing: 1.15,
+  },
+
+  textInput: {
+    // height: 45,
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    letterSpacing: 1.15,
   },
 
   messageTile: {
     justifyContent: 'center',
     backgroundColor: 'white',
     margin: 10,
-    height: 100,
+    height: '40%',
     borderRadius: 10,
     padding: 5,
-    marginBottom:10,
+    marginBottom: 10,
     borderColor: 'black',
     borderWidth: 1,
+    flexWrap: 'wrap'
   },
 
   messageTextInput: {

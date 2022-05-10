@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   btnText: {
-    fontSize: width > 600 ? 20 : 18,
+    // fontSize: width > 600 ? 20 : 18,
     color: 'white',
   },
   linkText: {
