@@ -63,8 +63,8 @@ class Loginpassword extends Component {
           // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
           let token = await AsyncStorage.getItem('id');
           // alert(token)
-          return this.props.navigation.navigate('Layoutscreen');
           // this.setState({password: ''})
+          return this.props.navigation.navigate('Layoutscreen');
         } catch (e) {
           // saving error
           console.log(e);
