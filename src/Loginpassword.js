@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {styles} from './Logintv.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import logo from './assests/logo.png';
+import logo from './assests/digiLogo.png';
 import Toast from 'react-native-simple-toast';
 import axios from 'axios';
 import {Themecontext} from './Theme/Themecontext';

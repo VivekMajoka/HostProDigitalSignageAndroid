@@ -203,7 +203,7 @@ const NotificationView = ({navigation, route}) => {
               fontWeight: '600',
               color: 'white',
               letterSpacing: 1.15,
-            }, {fontSize:fontsize.fontSize}]}>
+            }]}>
             Mark as read!
           </Text>
         </TouchableOpacity>

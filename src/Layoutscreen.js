@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {Component} from 'react';
 import {styles} from './Logintv.style';
-import logo from './assests/logo.png';
+import logo from './assests/digiLogo.png';
 import {
   ImageBackground,
   View,

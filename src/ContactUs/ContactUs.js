@@ -22,15 +22,16 @@ const ChangePassword = ({navigation}) => {
   return (
     <View style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
       <View style={[styles.messageTile, {backgroundColor: theme.backgroundColor}]}>
-        <Text style={[styles.heading, {color:theme.color}]}>LEANVIA Europe </Text>
-        <Text style={[styles.subHeading, {color:theme.color}]}>LEANVIA s.r.o. </Text>
-        <Text style={[styles.textInput, {color:theme.color}]}>Sturova 50, 07801 Secovce</Text>
-        <Text style={[styles.textInput, {color:theme.color}]}>Slovak Republic</Text>
-        <Text style={[styles.textInput, {color:theme.color}]}>Phone: +421 949 700 450</Text>
-        <Text style={[styles.textInput, {color:theme.color}]}>Email: info@leanvia.com</Text>
-        <Text style={[styles.textInput, {color:theme.color}]}>Skype: leanvia.com</Text>
+        <Text style={[styles.heading, {color:theme.color}]}>Host Pro </Text>
+        {/* <Text style={[styles.subHeading, {color:theme.color}]}>LEANVIA s.r.o. </Text> */}
+        <Text style={[styles.textInput, {color:theme.color}]}>12 Roman Ridge Street,</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Roman Ridge,</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Accra, Ghana,</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Phone: 0243535183</Text>
+        <Text style={[styles.textInput, {color:theme.color}]}>Email: info@hostpro.com</Text>
+        {/* <Text style={[styles.textInput, {color:theme.color}]}>Skype: leanvia.com</Text> */}
       </View>
-      <View style={[styles.messageTile, {backgroundColor: theme.backgroundColor}]}>
+      {/* <View style={[styles.messageTile, {backgroundColor: theme.backgroundColor}]}>
         <Text style={[styles.heading, {color:theme.color}]}>LEANVIA Asia</Text>
         <Text style={[styles.subHeading, {color:theme.color}]}>M/S. LEANVIA</Text>
         <Text style={[styles.textInput, {color:theme.color}]}>776, IA-2</Text>
@@ -39,7 +40,7 @@ const ChangePassword = ({navigation}) => {
         <Text style={[styles.textInput, {color:theme.color}]}>Phone:  +91 172 404 4311</Text>
         <Text style={[styles.textInput, {color:theme.color}]}>Email: info@leanvia.com</Text>
         <Text style={[styles.textInput, {color:theme.color}]}>Skype: leanvia.com</Text>
-      </View>
+      </View> */}
       {/* <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>SUBMIT</Text>
       </TouchableOpacity> */}

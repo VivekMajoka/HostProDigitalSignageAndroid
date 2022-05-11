@@ -11,7 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 import {styles} from './Logintv.style';
-import logo from './assests/logo.png';
+import logo from './assests/digiLogo.png';
 import Toast from 'react-native-simple-toast';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Themecontext} from './Theme/Themecontext';
@@ -62,58 +62,112 @@ class Login extends Component {
     const fontsize = this.context;
     // alert(JSON.stringify(mode));
     return (
+      // <View
+      //   style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+      //   <StatusBar backgroundColor={theme.backgroundColor} />
+      //   <View
+      //     style={{
+      //       height: '50%',
+      //       width: '100%',
+      //       // borderColor: '#212121',
+      //       // borderWidth: 1,
+      //     }}>
+      //     <View
+      //       style={[
+      //         styles.logoContainer,
+      //         {backgroundColor: theme.backgroundColor},
+      //       ]}>
+      //       <Image source={logo} style={[styles.logo]} />
+      //     </View>
+      //   </View>
+      //   <KeyboardAvoidingView style={[styles.formContainer]}>
+      //     <TextInput
+      //       autoFocus={true}
+      //       value={this.state.email}
+      //       placeholder="Email/Username"
+      //       placeholderTextColor="rgba(33,33,33,0.9)"
+      //       style={[styles.textInput, {fontSize: fontsize.fontSize}]}
+      //       autoCapitalize="none"
+      //       onChangeText={val => this.onChangeText('email', val)}
+      //       hasTvPrefferedFocus={true}
+      //     />
+      //     {/* <TextInput
+      //     hasTvPrefferedFocus={true}
+      //       textContentType="password"
+      //       secureTextEntry={true}
+      //       password={true}
+      //       placeholder="Password"
+      //       placeholderTextColor="rgba(33,33,33,0.5)"
+      //       style={styles.textInput}
+      //       autoCapitalize='none'
+      //       onChangeText={val => this.onChangeText("password", val)}
+      //     />  */}
+      //     <TouchableOpacity
+      //       style={styles.textInputBtn}
+      //       onPress={this.onPressNext}>
+      //       <Text style={styles.btnText}>NEXT</Text>
+      //     </TouchableOpacity>
+      //     {/* <TouchableOpacity>
+      //       <Text style={styles.linkText}>Forgot password ?</Text>
+      //     </TouchableOpacity> */}
+      //     {/* <TouchableOpacity
+      //       onPress={() => this.props.navigation.navigate("Signup")}
+      //     >
+      //       <Text style={styles.linkText2}>Already user?Sign in</Text>
+      //     </TouchableOpacity> */}
+      //   </KeyboardAvoidingView>
+      // </View>
       <View
         style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
         <StatusBar backgroundColor={theme.backgroundColor} />
         <View
-          style={{
-            height: '50%',
-            width: '100%',
-            // borderColor: '#212121',
-            // borderWidth: 1,
-          }}>
-          <View
-            style={[
-              styles.logoContainer,
-              {backgroundColor: theme.backgroundColor},
-            ]}>
-            <Image source={logo} style={[styles.logo]} />
-          </View>
+          style={[styles.container, {backgroundColor: theme.backgroundColor}]}>
+          <Image source={logo} style={styles.logo} />
         </View>
-        <KeyboardAvoidingView style={[styles.formContainer]}>
-          <TextInput
-            autoFocus={true}
-            value={this.state.email}
-            placeholder="Email/Username"
-            placeholderTextColor="rgba(33,33,33,0.9)"
-            style={[styles.textInput, {fontSize: fontsize.fontSize}]}
-            autoCapitalize="none"
-            onChangeText={val => this.onChangeText('email', val)}
-            hasTvPrefferedFocus={true}
-          />
+        <KeyboardAvoidingView style={styles.formContainer}>
           {/* <TextInput
-          hasTvPrefferedFocus={true}
-            textContentType="password"
-            secureTextEntry={true}
-            password={true}
-            placeholder="Password"
-            placeholderTextColor="rgba(33,33,33,0.5)"
+           autoFocus={true}
+            placeholder="Email"
+            placeholderTextColor="rgba(33,33,33,)"
             style={styles.textInput}
             autoCapitalize='none'
-            onChangeText={val => this.onChangeText("password", val)}
-          />  */}
+            onChangeText={val => this.onChangeText("email", val)}
+            hasTvPrefferedFocus={true}
+          /> */}
+          {/* <TextInput
+            autoFocus={true}
+            placeholder="Email/Username"
+            placeholderTextColor="rgba(33,33,33,0.9)"
+            style={styles.textInput}
+            autoCapitalize='none'
+            onChangeText={val => this.onChangeText("email", val)}
+            hasTvPrefferedFocus={true}
+          /> */}
+          <TextInput
+            // hasTvPrefferedFocus={true}
+            // textContentType="password"
+            autoFocus={true}
+            // secureTextEntry={true}
+            // password={true}
+            placeholder="Username/Email"
+            placeholderTextColor="rgba(33,33,33,0.9)"
+            style={styles.textInput}
+            autoCapitalize="none"
+            onChangeText={val => this.onChangeText('email', val)}
+          />
+
           <TouchableOpacity
             style={styles.textInputBtn}
             onPress={this.onPressNext}>
-            <Text style={styles.btnText}>NEXT</Text>
+            <Text style={styles.btnText}>LOGIN</Text>
           </TouchableOpacity>
           {/* <TouchableOpacity>
             <Text style={styles.linkText}>Forgot password ?</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>  */}
           {/* <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Signup")}
           >
-            <Text style={styles.linkText2}>Already user?Sign in</Text>
+            <Text style={styles.linkText2}>New User?Sign up</Text>
           </TouchableOpacity> */}
         </KeyboardAvoidingView>
       </View>
