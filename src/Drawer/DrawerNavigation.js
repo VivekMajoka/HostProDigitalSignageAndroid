@@ -23,7 +23,7 @@ export default DrawerNavigation = ({navigation}) => {
         name="Home"
         options={{
           title: 'HOME',
-          headerShown: true,
+          headerShown: false,
           headerStyle: {backgroundColor: theme.backgroundColor},
               headerTintColor: theme.color,
           headerTitleStyle: {

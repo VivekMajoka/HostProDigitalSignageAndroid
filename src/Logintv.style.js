@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#212121',
     alignItems: 'center',
     justifyContent: 'center',
+    width:"100%",
+    height:"100%"
   },
   formContainer: {
     flex: 1,
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     // borderRadius: 20,
-    resizeMode: 'center',
+    resizeMode: 'contain',
     backgroundColor: '#212121',
     paddingHorizontal: 10,
     //  margin: 50,

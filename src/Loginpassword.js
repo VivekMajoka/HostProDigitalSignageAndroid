@@ -43,12 +43,12 @@ class Loginpassword extends Component {
     this.setState({[key]: val});
   };
   onPressLogin = async () => {
-    // console.log(this.state.password, this.state.email)
+     console.log(this.state.password, this.state.email)
     if (!this.state.password) {
       alert('please enter password');
       Toast.show('Please enter password', Toast.LONG);
     } else {
-      let res = await axios.post('http://196.29.238.100:8002/auth/login/', {
+      let res = await axios.post('http://196.29.238.100/auth/login/', {
         username: this.state.email,
         password: this.state.password,
       });
@@ -56,15 +56,15 @@ class Loginpassword extends Component {
       // alert(JSON.stringify(res.data));
       if (res.data.token) {
         try {
-          // console.log(res.data.token,"fgh")
+          console.log(res.data.token,"fgh")
           Toast.show('Login Successful!', Toast.LONG);
           await AsyncStorage.setItem('token', res.data.token);
-          await AsyncStorage.setItem('id', JSON.stringify(res.data.id));
+          // await AsyncStorage.setItem('id', JSON.stringify(res.data.id));
           // await AsyncStorage.setItem('id', JSON.stringify(res.data.id))
-          let token = await AsyncStorage.getItem('id');
+          // let token = await AsyncStorage.getItem('id');
           // alert(token)
           // this.setState({password: ''})
-          return this.props.navigation.navigate('Layoutscreen');
+          return this.props.navigation.navigate('Dashboard');
         } catch (e) {
           // saving error
           console.log(e);

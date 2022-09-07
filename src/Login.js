@@ -159,7 +159,7 @@ class Login extends Component {
           <TouchableOpacity
             style={styles.textInputBtn}
             onPress={this.onPressNext}>
-            <Text style={styles.btnText}>LOGIN</Text>
+            <Text style={styles.btnText}>CONTINUE</Text>
           </TouchableOpacity>
           {/* <TouchableOpacity>
             <Text style={styles.linkText}>Forgot password ?</Text>

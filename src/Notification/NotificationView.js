@@ -43,7 +43,7 @@ const NotificationView = ({navigation, route}) => {
     };
 
     fetch(
-      `http://196.29.238.100:8002/notifi/update_status/${id}`,
+      `http://196.29.238.100/notifi/update_status/${id}`,
       requestOptions,
     )
       .then(res => res.json())
@@ -72,7 +72,7 @@ const NotificationView = ({navigation, route}) => {
     };
 
     fetch(
-      `http://196.29.238.100:8002/notifi/update_status/${id}/`,
+      `http://196.29.238.100/notifi/update_status/${id}/`,
       requestOptions,
     )
       .then(res => res.json())
@@ -99,7 +99,7 @@ const NotificationView = ({navigation, route}) => {
   //   };
 
   //   fetch(
-  //     `http://196.29.238.100:8002/notifi/update_status/${id}`,
+  //     `http://196.29.238.100/notifi/update_status/${id}`,
   //     requestOptions,
   //   )
   //     .then(res => res.json())

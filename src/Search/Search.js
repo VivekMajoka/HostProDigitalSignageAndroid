@@ -59,7 +59,7 @@ const ChangePassword = ({navigation}) => {
         id: 2,
       },
     };
-    fetch(`http://196.29.238.100:8002/layout/campaign/list/`, requestOptions)
+    fetch(`http://196.29.238.100/layout/campaign/list/`, requestOptions)
       .then(res => res.json())
       .then(res => {
         if (res) {

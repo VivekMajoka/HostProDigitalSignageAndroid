@@ -34,7 +34,7 @@ class Layoutscreen extends Component {
   async componentDidMount() {
     const token = await AsyncStorage.getItem('token');
     // console.log(token);
-    fetch('http://196.29.238.100:8002/layout/campaign/list/', {
+    fetch('http://196.29.238.100/layout/campaign/list/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ class Layoutscreen extends Component {
 
   layoutrun() {
     var index = 0;
-    // console.log('hiii1', this.state.datascr);
+    console.log('hiii1', this.state.datascr[index].image1);
     this.timer = setInterval(() => {
       this.setState({
         heading1: this.state.datascr[index].heading1,
@@ -70,7 +70,7 @@ class Layoutscreen extends Component {
         icon3: this.state.datascr[index].icon3,
         icon4: this.state.datascr[index].icon4,
         icon5: this.state.datascr[index].icon5,
-        id: this.state.datascr[index].id,
+        // id: this.state.datascr[index].id,
         image1: this.state.datascr[index].image1,
         image2: this.state.datascr[index].image2,
         image3: this.state.datascr[index].image3,
@@ -1182,7 +1182,7 @@ class Layoutscreen extends Component {
             </View>
           </View>
         ) : this.state.types == 18 ? (
-          <View style={{flexDirection: 'column', display: 'flex'}}>
+          <View style={{width: '100%', height: '100%'}}>
             <View
               style={{width: '100%', height: '60%', backgroundColor: 'black'}}>
               <Image

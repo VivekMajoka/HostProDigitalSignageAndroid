@@ -35,7 +35,7 @@ const ChangePassword = ({navigation}) => {
         password2 : confPass
       })
     }
-    await fetch('http://196.29.238.100:8002/auth/changepassword/', requestOptions)
+    await fetch('http://196.29.238.100/auth/changepassword/', requestOptions)
     .then(res => res.json())
     .then((res)=>{
       Toast.show("Password changed successfully!", Toast.LONG);

@@ -25,7 +25,7 @@ export default Test = ({navigation}) => {
     if (!email && !pass) {
       Toast.show('Please enter email/password', Toast.LONG);
     } else {
-      fetch ('http://196.29.238.100:8002/auth/login/', {
+      fetch ('http://196.29.238.100/auth/login/', {
         method : 'POST',
         headers:{
           'content-type' : 'application/json'
